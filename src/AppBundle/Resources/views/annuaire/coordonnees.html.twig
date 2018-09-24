@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Annuaire</title>
+
+        
+
+        <link rel="stylesheet" href="{{asset('public/css/leaflet.css')}}"/>
+        <link rel="stylesheet" href="{{asset('public/css/map.css')}}"/>
+
+        <script  src ="{{asset('public/js/leaflet.js')}}"></script>
+        <script  src ="{{asset('public/js/leaflett.js')}}"></script>
+        
+        
+
+    </head>
+    <body>
+        <h1>Coordonnées</h1>
+        <ul id="coordonnees">
+        
+            <li>{{annuaire.nom}}</a></li>
+            <li>{{annuaire.prenom}}</li>
+            <li>{{annuaire.telephone}}</li>
+            <li>{{annuaire.mail}}</li>
+            <li>{{annuaire.adresse}}</li>
+        </ul>
+
+        <div id="mapid"></div>
+        <script>
+            display_map({{latitude}}, {{longitude}})
+        </script>
+
+    </body>
+</html>

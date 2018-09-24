@@ -1,0 +1,7 @@
+# ancienne methode
+
+services:
+
+    test.symf_app.curl:
+
+        class: AppBundle\Network\ServiceCurl

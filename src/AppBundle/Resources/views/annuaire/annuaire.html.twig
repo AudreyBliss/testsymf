@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{%block body%} 
+        <h1>Annuaire</h1>
+
+        <ul id="list">
+        {% for id, personne in annuaire %}
+             
+            <li><a href="{{ path('coordonnees',{'id':id}) }}">{{personne.nom}}</a></li>
+
+        {% endfor %}
+        </ul>
+{%endblock%}
+
+
+    

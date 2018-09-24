@@ -1,0 +1,56 @@
+{#{% extends 'base.html.twig' %}//pour afficher un evenenement 
+
+{%block body%} 
+        <h1>Evenements</h1>
+
+       <ul id="list">
+        {% for id, events in events %}
+             
+            <li><a href="{{ path('eventdetails',{'id':id}) }}">{{events.nom}}</a></li>
+
+        {% endfor %}
+        </ul>
+{%endblock%}#}
+
+<html>
+    <head>
+        <title>Nos evenements dans le détails</title>
+
+        
+
+        <link rel="stylesheet" href="{{asset('public/css/leaflet.css')}}"/>
+        <link rel="stylesheet" href="{{asset('public/css/map.css')}}"/>
+
+        <script  src ="{{asset('public/js/leaflet.js')}}"></script>
+        {#<script  src ="{{asset('public/js/leaflett.js')}}"></script>#}
+        <script  src ="{{asset('public/js/leaflettt.js')}}"></script>
+        
+
+    </head>
+    <body>
+
+
+        <h1>Evenements</h1>
+
+       <ul id="list">
+        {% for e in events %}
+            <li>{{e.nom}}</li>
+            <li>{{e.date}}</li>
+            <li>{{e.adresse}}</li>
+            <li>{{e.latitude}}</li>
+            <li>{{e.longitude}}</li>    
+        {% endfor %}
+        </ul>
+
+        <div id="mapid"></div>
+
+       <script>
+            let mymap = L.map('mapid').setView([48.8534, 2.3488], 13); 
+            display_map();
+            {% for e in events %}
+                display_marker({{e.latitude}}, {{e.longitude}})
+            {% endfor %}
+       </script> 
+
+    </body>
+</html>

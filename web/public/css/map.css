@@ -1,0 +1,9 @@
+#mapid { 
+    height: 600px;
+    width:600px;
+    margin:auto; 
+}
+
+ul, h1 {
+    text-align:center;   
+}

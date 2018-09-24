@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nos evenements dans le détails</title>
+
+        
+
+        <link rel="stylesheet" href="{{asset('public/css/leaflet.css')}}"/>
+        <link rel="stylesheet" href="{{asset('public/css/map.css')}}"/>
+
+        <script  src ="{{asset('public/js/leaflet.js')}}"></script>
+        {#<script  src ="{{asset('public/js/leaflett.js')}}"></script>#}
+        <script  src ="{{asset('public/js/leaflettt.js')}}"></script>
+        
+
+    </head>
+    <body>
+        <h1>Coordonnées</h1>
+        <ul id="events">
+        
+            <li>{{events.nom}}</li>
+            <li>{{events.date}}</li>
+            <li>{{events.adresse}}</li>
+        </ul>
+
+        <div id="mapid"></div>
+        <script>
+            display_map({{latitude}}, {{longitude}})
+        </script>
+
+    </body>
+</html>
